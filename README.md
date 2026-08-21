@@ -31,13 +31,19 @@ projects are hosted.
 CAMSAI hosts open-source projects that serve its mission. Every project is
 admitted under the intake requirements in [GOVERNANCE.md](GOVERNANCE.md) §7.
 
+These repositories predate this framework, so none has been admitted by a vote —
+there was no body to take one. They are listed as **Proposed** until the first
+Steering Committee decides on each, which it must do within 180 days of
+adoption ([GOVERNANCE.md](GOVERNANCE.md) §8.1). The status column says what is
+true, not what is hoped.
+
 | Project | Description | Status |
 |:-----------------|:-------------------------------------------------|:----------|
-| [standards](https://github.com/camsai/standards) | Schemas, validation tools, and data models for materials science and AI research | Active |
-| [notebooks](https://github.com/camsai/notebooks) | Interactive notebooks demonstrating CAMSAI tools and workflows | Active |
-| [jupyterlite](https://github.com/camsai/jupyterlite) | Browser-based environment for running CAMSAI notebooks without local setup | Active |
-| [actions](https://github.com/camsai/actions) | Shared continuous-integration workflows for CAMSAI repositories | Active |
-| q3 | An AI-native codebase for materials science. Apache-2.0 intended; public release targeted for late 2026 | Incubating |
+| [standards](https://github.com/camsai/standards) | Schemas, validation tools, and data models for materials science and AI research | Proposed |
+| [notebooks](https://github.com/camsai/notebooks) | Interactive notebooks demonstrating CAMSAI tools and workflows | Proposed |
+| [jupyterlite](https://github.com/camsai/jupyterlite) | Browser-based environment for running CAMSAI notebooks without local setup | Proposed |
+| [actions](https://github.com/camsai/actions) | Shared continuous-integration workflows for CAMSAI repositories | Proposed |
+| q3 | An AI-native codebase for materials science. Apache-2.0 intended; public release targeted for late 2026 | Proposed |
 
 ## How decisions are made
 

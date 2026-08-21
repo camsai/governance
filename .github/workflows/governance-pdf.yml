@@ -5,6 +5,10 @@
 # Pushing a date tag (YYYY.M.D-N) publishes that PDF as a GitHub Release.
 # Every other run builds the same PDF and leaves it as a build artifact, so a
 # rendering failure surfaces before a version is ratified rather than after.
+#
+# A date tag means "ratified" everywhere in these documents, so the release job
+# is separated from the build: only it can obtain a write-scoped token, and it
+# refuses to publish a tag that is not on main.
 name: Governance PDF
 
 on:
@@ -18,12 +22,12 @@ permissions:
   contents: read
 
 jobs:
-  pdf:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # to create the release on a tag
+    outputs:
+      label: ${{ steps.version.outputs.label }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Determine version label
         id: version
@@ -38,14 +42,43 @@ jobs:
         run: scripts/build-pdf.sh "${{ steps.version.outputs.label }}"
 
       - name: Keep the PDF as a build artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: CAMSAI-governance-${{ steps.version.outputs.label }}
           path: CAMSAI-governance-*.pdf
           if-no-files-found: error
 
+  release:
+    needs: build
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # only this job may publish
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Refuse to publish a tag that is not on main
+        # A date tag asserts that a version was ratified, which under
+        # CHARTER.md section 12 can only follow a merged pull request. A tag on
+        # a commit that never reached main did not come through that process,
+        # however it was created.
+        run: |
+          git fetch --no-tags origin main
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Tag $GITHUB_REF_NAME points at $GITHUB_SHA, which is not an ancestor of main."
+            echo "::error::A ratified version must be tagged on a commit that was merged to main."
+            exit 1
+          fi
+          echo "Tag $GITHUB_REF_NAME is on main."
+
+      - name: Fetch the PDF built by the build job
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: CAMSAI-governance-${{ needs.build.outputs.label }}
+
       - name: Publish the release
-        if: github.ref_type == 'tag'
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}

@@ -334,6 +334,25 @@ Editorial changes that do not alter meaning — typographical corrections, broke
 links, formatting — may be merged by lazy consensus without a vote, and are
 folded into the next tagged version.
 
+### 12.1 Adoption of the first version
+
+The procedure above amends a Charter that is already in force. It cannot bring
+one into force: it requires a Steering Committee, and until this document takes
+effect there is none. The first version is therefore adopted differently, once
+only.
+
+**This Charter and GOVERNANCE.md take effect when the Convener records their
+adoption** in a pull request against this repository, with the assent of
+whichever seats are filled at that time, and tags the result under the scheme
+in README.md. From that moment §12 governs every further change, and this
+subsection is spent.
+
+Until that record exists, these documents are the Consortium's **declared
+operating practice** rather than a ratified instrument: they state how CAMSAI
+intends to conduct itself and may be relied on as a statement of intent, but no
+version tag is applied and nothing in them has been voted on. Drafts are marked
+as such on their face.
+
 ## 13. Dissolution
 
 If the Steering Committee resolves by two-thirds vote to dissolve the

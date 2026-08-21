@@ -1,0 +1,21 @@
+# Named maintainers of this repository, as required of every CAMSAI project by
+# GOVERNANCE.md §7, item 5. Until branch protection is available — it requires a
+# public repository or a paid organization plan — this file is a record of who
+# is responsible rather than an enforced review requirement.
+#
+# Governance decisions are not made by code review. A CODEOWNERS approval
+# records that the process in CHARTER.md §12 was followed; it does not replace
+# it.
+
+*                   @timurbazhirov
+
+# The constitutional documents. Changes here are amendments under CHARTER.md §12.
+/CHARTER.md         @timurbazhirov
+/GOVERNANCE.md      @timurbazhirov
+/STEERING.md        @timurbazhirov
+/TRADEMARKS.md      @timurbazhirov
+/CODE_OF_CONDUCT.md @timurbazhirov
+
+# The release path: what turns a date tag into a published, citable version.
+/.github/workflows/ @timurbazhirov
+/scripts/           @timurbazhirov

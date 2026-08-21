@@ -1,0 +1,42 @@
+# Every contribution across CAMSAI is made under the Developer Certificate of
+# Origin (CHARTER.md section 5.1). This checks that the repository holding that
+# rule actually follows it.
+name: DCO
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sign-off-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Verify Signed-off-by on every commit
+        # Only the pull request's own commits (base..head). The synthetic merge
+        # commit GitHub builds for pull_request events is excluded by --no-merges.
+        env:
+          BASE: ${{ github.event.pull_request.base.ref }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git fetch --no-tags origin "$BASE"
+          missing=$(git rev-list --no-merges "origin/$BASE..$HEAD" | while read -r sha; do
+            if ! git log -1 --format='%B' "$sha" | grep -qiE '^Signed-off-by: .+ <.+@.+>'; then
+              printf '  %s %s\n' "$(git rev-parse --short "$sha")" "$(git log -1 --format='%s' "$sha")"
+            fi
+          done)
+          if [ -n "$missing" ]; then
+            echo "These commits carry no Signed-off-by trailer:"
+            echo "$missing"
+            echo
+            echo "Sign off new commits with 'git commit -s', or fix this branch with:"
+            echo "    git rebase --signoff origin/$BASE"
+            exit 1
+          fi
+          echo "Every commit carries a Signed-off-by trailer."

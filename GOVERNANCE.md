@@ -104,14 +104,33 @@ appoint directly, recording the reasons. Every appointment is made in a pull
 request against STEERING.md that records the candidate's constituency and how
 they meet it.
 
+**The Convener is accountable for progress.** At least once a quarter the
+Convener publishes a short note in this repository recording which seats remain
+open, what has been done to fill them, and every expression of interest received
+and how it was answered. A founding period that stalls is visible in that record
+rather than only in the silence.
+
+**If seats remain unfilled at 31 December 2027**, the founding period ends
+regardless: the Convener's power to appoint directly lapses, no further
+appointment may be made under this subsection, and the members then seated
+continue as caretakers under Charter §11.2 until successors are appointed under
+§3.2. The Consortium is not left without a body, and the Convener does not
+retain founding powers indefinitely by leaving seats empty.
+
 ### 3.2 Terms
 
 - **Interim terms.** Members appointed during the founding period serve until
   the Consortium adopts a fiscal sponsor (Charter §11) or until 31 December
   2027, whichever comes first, and continue in a caretaker capacity thereafter
   until successors are appointed (Charter §11.2).
-- **Regular terms.** Thereafter members serve two-year terms, staggered so that
-  roughly half the seats turn over each year, and may serve consecutive terms.
+- **Regular terms.** Thereafter members serve two-year terms and may serve
+  consecutive terms.
+- **Starting the stagger.** A stagger has to be created once before it can
+  sustain itself. At the first regular appointment round, seats 1 to 4 take
+  full two-year terms and seats 5 to 7 take one-year terms; every term
+  thereafter is two years. Roughly half the committee then turns over each
+  year, so that the Consortium never loses its whole institutional memory in a
+  single cycle.
 - **Appointment.** Vacant seats are filled by recorded vote of the seated
   members, following a public call for candidates open for at least
   twenty-eight days.
@@ -173,10 +192,27 @@ A recorded vote of the Steering Committee is required for:
 - admitting an organization to the Advisory Council (simple majority);
 - dissolution (two-thirds, per Charter §13).
 
-**Quorum** is a majority of seated members. Votes are conducted in the open —
-in a pull request, an issue, or a meeting whose result is posted — and the
-outcome is recorded with the tally and each member's position. Voting is open
-for at least seven days unless every seated member has already voted.
+**Quorum** is **51% of the seats currently filled** — not of the seven seats in
+total, so that vacancies never block the Consortium from acting. The thresholds
+above are likewise fractions of the seats currently filled. Votes are conducted
+in the open — in a pull request, an issue, or a meeting whose result is
+posted — and the outcome is recorded with the tally and each member's position.
+Voting is open for at least seven days unless every seated member has already
+voted.
+
+**What this means while few seats are filled.** Scaling to filled seats keeps
+the Consortium operable from its first day, and it has a consequence worth
+stating rather than leaving to be discovered: early in the founding period, when
+only one or two seats are filled, that small number carries every threshold —
+including amending this document and directing the marks. This is a deliberate
+trade-off of concentration against paralysis, made with open eyes. Three things
+constrain it in practice: every decision is recorded in public (§4.4), the
+custodian's undertakings in TRADEMARKS.md §2 bind regardless of who votes, and
+the fastest way to dilute the concentration is to fill the remaining seats,
+which §3.1 makes anyone able to propose. A Steering Committee acting under this
+paragraph while seats stand empty should weigh whether a decision can wait until
+more constituencies are represented, and record that it considered the
+question.
 
 ### 4.3 Conflicts of interest
 
@@ -281,6 +317,25 @@ is met.
 
 Status changes are made by recorded vote and reflected in the projects table in
 [README.md](README.md).
+
+### 8.1 Repositories that predate this framework
+
+The `camsai` organization already holds repositories created before these
+documents existed. None of them has been admitted by a vote, because there was
+no body to take one, and none should be described as though it had been.
+
+Until the Steering Committee decides otherwise, such repositories are listed as
+**Proposed**: hosted in the organization, not yet admitted, and making no claim
+to have met the intake requirements in §7. **Within 180 days of the adoption of
+this document** (Charter §12.1), the Steering Committee must take up each of
+them and decide, by recorded vote, to admit it as Incubating or Active, to
+archive it, or to remove it from the organization. Where a repository is close
+to the bar, the vote may admit it conditionally on named gaps being closed by a
+stated date.
+
+This is expected to be the first substantive work the Steering Committee does.
+It is deliberately placed first: a consortium that will hold new projects to an
+intake standard has to apply that standard to what it is already carrying.
 
 ## 9. Amendments
 

@@ -67,7 +67,8 @@ representative at an online or offline event.
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
 **conduct@camsai.org** _(placeholder: to be designated by the Steering
-Committee; until then, report to the Steering Committee Chair)_.
+Committee; until a Chair is elected, reports go to the Convener recorded in
+[STEERING.md](STEERING.md), or to any seated member)_.
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
