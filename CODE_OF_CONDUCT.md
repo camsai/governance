@@ -1,6 +1,7 @@
 # Contributor Covenant Code of Conduct
 
-> **Interim draft — pre-incorporation.** Version `2026.8.20-0`, 20 August 2026.
+> **Interim draft — pre-incorporation.** This document has not been ratified;
+> a version date tag is applied when it is. Last revised 2026-08-20.
 > This Code of Conduct applies to all CAMSAI projects and spaces. The
 > enforcement contact below is a placeholder until the Steering Committee
 > designates one.
@@ -71,6 +72,29 @@ All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
+
+### When the report concerns someone who would otherwise handle it
+
+No one decides a matter in which they are the subject. A report may be made to
+**any** member of the Steering Committee, not only to the Chair or the
+designated contact, and the following applies:
+
+- **If the report concerns the Chair, the designated enforcement contact, or a
+  Steering Committee member**, that person is told only what is necessary to
+  answer the allegation, takes no part in deciding it, and does not see the
+  reporter's identity where the reporter has asked that it be withheld. The
+  remaining members handle the matter.
+- **If the report concerns a project maintainer**, it may be brought straight
+  to the Steering Committee rather than to that project.
+- **If conflicts, recusals, or the number of people involved leave the Steering
+  Committee unable to decide the matter fairly** — including where a report
+  concerns a majority of it — the non-conflicted members, or the reporter if
+  none remain, may ask for an **external reviewer**: a person with no
+  employment, consulting, or personal relationship to any party, appointed to
+  investigate and recommend an outcome. The recommendation and the fact that an
+  external reviewer was used are recorded, with the parties anonymised.
+
+A decision is never taken by a single person acting alone.
 
 ## Enforcement Guidelines
 

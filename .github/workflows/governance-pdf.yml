@@ -51,8 +51,8 @@ jobs:
           TAG: ${{ github.ref_name }}
         run: |
           printf '%s\n\n%s\n' \
-            "Consolidated PDF of the CAMSAI governance documents as ratified at version \`$TAG\`: the Charter, the Governance rules, the Steering Committee roster, the statement on the CAMSAI name and marks, and the Code of Conduct." \
-            "CAMSAI is not incorporated and has no separate legal personality; see Charter section 8." \
+            "Consolidated PDF of the CAMSAI governance documents as ratified at version \`$TAG\`: the Charter, the Governance rules, the Steering Committee roster, the register of supporters and operating costs, the statement on the CAMSAI name and marks, and the Code of Conduct." \
+            "CAMSAI is not incorporated and has no separate legal personality; see Charter section 11." \
             > release-notes.md
           gh release create "$TAG" \
             --title "CAMSAI Governance $TAG" \

@@ -1,9 +1,11 @@
 # CAMSAI Governance
 
-> **Interim draft — pre-incorporation.** Version `2026.8.20-0`, 20 August 2026.
-> These documents describe how CAMSAI intends to govern itself. CAMSAI is not
-> yet incorporated and has no separate legal personality; see
-> [CHARTER.md](CHARTER.md) §8 and [TRADEMARKS.md](TRADEMARKS.md) for what that
+> **Interim draft — pre-incorporation.** These documents have not been
+> ratified; they are proposed here for review. A version date tag is applied
+> when they are ratified. Last revised 2026-08-20.
+>
+> CAMSAI is not yet incorporated and has no separate legal personality; see
+> [CHARTER.md](CHARTER.md) §11 and [TRADEMARKS.md](TRADEMARKS.md) for what that
 > means in practice.
 
 The **Consortium for the Advancement of Materials Science with AI (CAMSAI)** is
@@ -16,16 +18,18 @@ projects are hosted.
 
 | Document | What it covers |
 |:----------------------|:--------------------------------------------------|
-| [CHARTER.md](CHARTER.md) | Mission, scope, principles, membership, projects, affiliations, amendment process |
-| [GOVERNANCE.md](GOVERNANCE.md) | Steering Committee composition, decision rules, project intake and lifecycle |
-| [STEERING.md](STEERING.md) | The current roster of Steering Committee seats |
+| [CHARTER.md](CHARTER.md) | Mission, scope, principles, membership, contributor IP, projects, antitrust, export control, funding, affiliations, interim status, amendments |
+| [GOVERNANCE.md](GOVERNANCE.md) | Steering Committee, founding period, decision rules, Advisory Council, project intake and lifecycle |
+| [STEERING.md](STEERING.md) | Convener, Chair, and the roster of seats |
+| [SUPPORTERS.md](SUPPORTERS.md) | Who bears the operating costs, who supports CAMSAI, and the Advisory Council roster |
 | [TRADEMARKS.md](TRADEMARKS.md) | Custody of the CAMSAI name, marks, and domain, and permitted uses |
-| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Expected conduct in all CAMSAI spaces, and how to report a concern |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Expected conduct, how to report a concern, and what happens when the report concerns whoever would normally handle it |
+| [SECURITY.md](SECURITY.md) | Reporting a security issue in this repository |
 
 ## Projects
 
 CAMSAI hosts open-source projects that serve its mission. Every project is
-admitted under the intake requirements in [GOVERNANCE.md](GOVERNANCE.md) §6.
+admitted under the intake requirements in [GOVERNANCE.md](GOVERNANCE.md) §7.
 
 | Project | Description | Status |
 |:-----------------|:-------------------------------------------------|:----------|
@@ -46,7 +50,33 @@ and conflict-of-interest requirements are in [GOVERNANCE.md](GOVERNANCE.md) §4.
 
 The Steering Committee has **seven seats, allocated by constituency** rather
 than by employer, so that no single organization or sector can control the
-consortium. See [STEERING.md](STEERING.md).
+consortium. Seats are open and the founding cohort is not closed — see
+[STEERING.md](STEERING.md) for how to put yourself or someone else forward.
+
+Organizations that commit substantial resources, and constituencies that do not
+hold a seat, have a standing non-voting channel to the Steering Committee
+through the **Advisory Council** ([GOVERNANCE.md](GOVERNANCE.md) §5). Support
+is acknowledged publicly and confers no governance rights; that separation is
+deliberate and is explained in [CHARTER.md](CHARTER.md) §9.4.
+
+## For institutional reviewers
+
+If you are reviewing CAMSAI on behalf of a laboratory, university, or company,
+these are the sections your review will most likely turn on:
+
+| Question | Where |
+|:----------------------------------------|:-----------------------------|
+| What are the inbound contribution terms? Is there a CLA? | [CHARTER.md](CHARTER.md) §5.1 — DCO, no CLA, no copyright assignment |
+| What happens to our patents? | [CHARTER.md](CHARTER.md) §5.3 — the Apache-2.0 §3 grant and nothing beyond it |
+| Can our students and postdocs contribute? | [CHARTER.md](CHARTER.md) §5.2 — institutional rights must be cleared first |
+| Can our researchers still publish? | [CHARTER.md](CHARTER.md) §5.4 — no embargo, no pre-publication review |
+| Is there antitrust exposure in a shared forum? | [CHARTER.md](CHARTER.md) §7 — prohibited topics and the duty to halt |
+| Export control, ITAR/EAR, classified or CUI material? | [CHARTER.md](CHARTER.md) §8 — what CAMSAI will not accept, and whose review governs |
+| What are we committing to financially? | [CHARTER.md](CHARTER.md) §9.2 — nothing; there are no dues |
+| Who are we contracting with? | [CHARTER.md](CHARTER.md) §11 — no entity yet, and what may not be represented |
+| What if the interim period runs out? | [CHARTER.md](CHARTER.md) §11.2 — the Charter continues; the question must be put by 30 September 2027 |
+| Can we sponsor and get a seat? | [CHARTER.md](CHARTER.md) §9.4 — no, deliberately; see the Advisory Council instead |
+| Can we ship a commercial product on this? | [TRADEMARKS.md](TRADEMARKS.md) §4.1 — yes, under your own name |
 
 ## Versioning and releases
 
@@ -67,10 +97,16 @@ that reviewers, counsel, and partner organizations can read and circulate a
 fixed, citable snapshot without cloning the repository. Releases are listed at
 [github.com/camsai/governance/releases](https://github.com/camsai/governance/releases).
 
+To build the same PDF locally, with Docker installed:
+
+```bash
+scripts/build-pdf.sh
+```
+
 ## Proposing a change
 
 Open a pull request against this repository. Amendments to the Charter or to
-GOVERNANCE.md follow the process in [CHARTER.md](CHARTER.md) §9: discussion in
+GOVERNANCE.md follow the process in [CHARTER.md](CHARTER.md) §12: discussion in
 the pull request, a recorded Steering Committee vote, then a new date tag and
 release. Editorial corrections that do not change meaning may be merged by
 lazy consensus and folded into the next tagged version.
