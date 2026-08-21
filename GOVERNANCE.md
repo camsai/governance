@@ -1,9 +1,9 @@
 # CAMSAI Governance
 
-> **Interim draft — pre-incorporation.** Version `2026.8.20-0`, 20 August 2026.
-> This document defines how CAMSAI decides things. It operates together with
-> the [Charter](CHARTER.md), which defines what CAMSAI is for. Where the two
-> conflict, the Charter prevails.
+> **Interim draft — pre-incorporation.** This document has not been ratified; a
+> version date tag is applied when it is. Last revised 2026-08-20.
+> It operates together with the [Charter](CHARTER.md), which defines what
+> CAMSAI is for. Where the two conflict, the Charter prevails.
 
 ## 1. Steering Committee
 
@@ -13,15 +13,23 @@ organization:
 
 | # | Constituency | Drawn from |
 |:---|:-------------------|:--------------------------------------------------------|
-| 1 | Government laboratory | A federal or national laboratory, including United States Department of Energy laboratories |
-| 2 | Academic | A university or other degree-granting research institution |
-| 3 | Startup / small enterprise | A company of fewer than 100 employees building in this field |
-| 4 | Cloud infrastructure provider | An organization providing compute or platform infrastructure at scale |
-| 5 | HPC hardware provider | An organization producing high-performance computing hardware or its systems software |
-| 6 | AI models provider | An organization developing or serving foundation models or other AI systems |
+| 1 | Government laboratory | A federal, national, or equivalent public research laboratory or agency-funded research organization, in any country — including, but not limited to, United States Department of Energy laboratories |
+| 2 | Academic | A university, or a non-profit research institute or other academic research organization, whether or not it grants degrees |
+| 3 | Startup / small enterprise | A company of fewer than 100 employees working in this field |
+| 4 | Cloud infrastructure provider | An organization providing compute, storage, or platform infrastructure at scale |
+| 5 | HPC hardware provider | An organization producing high-performance computing hardware, accelerators, or their systems software |
+| 6 | AI models provider | An organization that develops or serves AI models or systems used in materials research, whether as open-weight models or as a hosted service |
 | 7 | Independent | A practitioner with no employment or consulting relationship to an organization already holding a seat |
 
 The current holders of these seats are recorded in [STEERING.md](STEERING.md).
+
+**Seat 6 spans two sub-constituencies** whose interests differ: organizations
+that publish open-weight models, and organizations that serve models as a
+hosted commercial service. The appointment record must state which of the two
+the seated member represents, and where both are active in the Consortium the
+Steering Committee should alternate the seat between them across successive
+terms. A standing imbalance is grounds for the Steering Committee to propose an
+amendment subdividing the seat.
 
 Two rules protect the balance the table is meant to create:
 
@@ -33,11 +41,26 @@ Two rules protect the balance the table is meant to create:
   not as a delegate of their employer, and is expected to act in the interest
   of the Consortium.
 
-A member whose circumstances change so that they no longer match their
-constituency — a change of employer, or an independent member taking a role at
-a seated organization — informs the Chair. The member may continue to serve for
-up to ninety days while a successor is identified, and must recuse from any
-vote where the mismatch is material.
+### 1.1 What the one-seat rule does and does not limit
+
+The cap applies to **seats**, not to participation. A diversified organization
+whose divisions span several constituencies — cloud, HPC hardware, and AI
+models, say — may hold only one seat, but nothing limits it from:
+
+- contributing to, and maintaining, as many CAMSAI projects as it invests in.
+  **Maintainership is uncapped** (Charter §4), and technical direction is
+  exercised there rather than in the Steering Committee, which does not direct
+  projects' technical work (Charter §6);
+- taking part in the **Advisory Council** (§5) through as many of its divisions
+  as it wishes, with a standing channel to the Steering Committee;
+- supporting the Consortium's operating costs, acknowledged publicly
+  (Charter §9.4).
+
+The rule is a deliberate choice to represent constituencies rather than to
+weight votes by investment. An organization contributing at large scale holds
+one seat, exactly as an independent practitioner does. The Consortium is worth
+belonging to only because that is true, and the Steering Committee should
+expect to explain it rather than apologise for it.
 
 ## 2. Chair
 
@@ -47,12 +70,47 @@ sets agendas, ensures decisions and their reasons are recorded, and is the
 point of contact for the Consortium. The Chair has no additional vote and no
 veto.
 
-## 3. Terms, appointment, and vacancy
+## 3. Founding period, terms, and appointment
 
-- **Interim seats.** Until the first regular appointment cycle, seats are
-  filled by the founding participants, who serve until the Consortium adopts a
-  fiscal sponsor (Charter §8) or until 31 December 2027, whichever comes first.
-- **Terms.** Thereafter members serve two-year terms, staggered so that
+### 3.1 The founding period
+
+The **founding period** runs from the adoption of this document until all seven
+seats are filled and a Chair has been elected, or until 31 December 2027,
+whichever comes first.
+
+The **Convener** is the participant who initiates the Consortium and is
+recorded as such in [STEERING.md](STEERING.md). The Convener's role is to run
+the founding period: to maintain a public call for candidates, to answer
+expressions of interest on the record, and to bring appointments to a decision.
+The Convener holds **no vote by virtue of the role** and the role ends when the
+Chair is elected. The Convener may separately hold a seat if they qualify for a
+constituency, in which case they vote in that capacity only.
+
+The **founding participants** are the Convener together with the individuals
+appointed to seats during the founding period. They are named in STEERING.md as
+each appointment is made, and nowhere else — there is no separate, closed list.
+
+**The founding cohort is open.** Every unfilled seat is open to candidates at
+all times during the founding period, and being appointed late confers no
+lesser standing: a member appointed in the last week of the founding period has
+exactly the rights of the first. Any individual or organization may propose a
+candidate, including themselves, by opening an issue in this repository. The
+Convener must respond on the record and must not leave an expression of
+interest unanswered.
+
+During the founding period, appointments are made by consensus of the members
+already seated. Where fewer than three seats are filled, the Convener may
+appoint directly, recording the reasons. Every appointment is made in a pull
+request against STEERING.md that records the candidate's constituency and how
+they meet it.
+
+### 3.2 Terms
+
+- **Interim terms.** Members appointed during the founding period serve until
+  the Consortium adopts a fiscal sponsor (Charter §11) or until 31 December
+  2027, whichever comes first, and continue in a caretaker capacity thereafter
+  until successors are appointed (Charter §11.2).
+- **Regular terms.** Thereafter members serve two-year terms, staggered so that
   roughly half the seats turn over each year, and may serve consecutive terms.
 - **Appointment.** Vacant seats are filled by recorded vote of the seated
   members, following a public call for candidates open for at least
@@ -63,6 +121,31 @@ veto.
 - **Vacancy.** A vacant seat reduces the number of seated members for quorum
   and majority purposes; it is not counted as an abstention.
 
+### 3.3 When a member no longer fits their constituency
+
+Constituency fit is assessed **at appointment**, and confirmed by each member in
+a short annual attestation recorded in STEERING.md. Between those points, two
+different things can happen, and they are treated differently:
+
+- **The member moves.** A member who changes employer, or an independent member
+  who takes a role at an organization already holding a seat, informs the
+  Chair. They may continue to serve for up to ninety days while a successor is
+  identified, and must recuse from any vote where the mismatch is material.
+- **The organization changes around the member.** A company that grows past the
+  hundred-employee threshold, a startup that is acquired into a larger group, or
+  an institution that changes character does **not** cost the member their seat
+  mid-term: the member serves out the term. The change is noted at the next
+  annual attestation, and the seat returns to a qualifying candidate at the next
+  appointment. A member in this position must still recuse where the mismatch
+  is material to a decision.
+
+The distinction is deliberate. Punishing a member for their employer's growth
+would make the startup seat a liability to accept, and the Consortium wants
+exactly the people who are building fast enough for it to become a question.
+Where an acquisition results in two seated members falling under common
+control, the one-seat rule in §1 governs and the more recently appointed member
+transitions under the ninety-day rule.
+
 ## 4. Decision-making
 
 ### 4.1 Lazy consensus (the default)
@@ -70,7 +153,7 @@ veto.
 Routine decisions carry by lazy consensus. A proposal is opened as a pull
 request or issue in the relevant repository and left visible for a review
 period of at least **seventy-two hours** — at least **fourteen days** for
-amendments under Charter §9. If no Steering Committee member has objected by
+amendments under Charter §12. If no Steering Committee member has objected by
 the end of the period, the proposal carries. An objection must state a reason
 and, where possible, what would resolve it. Any member may call for a recorded
 vote instead of lazy consensus.
@@ -87,7 +170,8 @@ A recorded vote of the Steering Committee is required for:
 - appointing or removing a Steering Committee member, or electing the Chair
   (§3, §2);
 - entering a community affiliation (simple majority);
-- dissolution (two-thirds, per Charter §10).
+- admitting an organization to the Advisory Council (simple majority);
+- dissolution (two-thirds, per Charter §13).
 
 **Quorum** is a majority of seated members. Votes are conducted in the open —
 in a pull request, an issue, or a meeting whose result is posted — and the
@@ -96,9 +180,9 @@ for at least seven days unless every seated member has already voted.
 
 ### 4.3 Conflicts of interest
 
-A member with a material personal or organizational interest in a decision
-must disclose it before the discussion and recuse from the vote. A recused
-member does not count toward quorum for that decision. Where a decision would
+A member with a material personal or organizational interest in a decision must
+disclose it before the discussion and recuse from the vote. A recused member
+does not count toward quorum for that decision. Where a decision would
 predominantly benefit one organization, the Chair should say so plainly in the
 record even if no formal conflict exists.
 
@@ -110,15 +194,51 @@ be made in a pull request or issue should be. Whatever the venue, the decision
 and its reasons are recorded in the relevant repository, which is the
 authoritative record.
 
-## 5. Escalation
+## 5. Advisory Council
 
-Technical decisions belong to project maintainers (Charter §5). The Steering
+The Advisory Council is a standing forum through which organizations that
+commit substantial resources to CAMSAI, and constituencies that do not hold a
+seat, can reach the Steering Committee directly. It exists because a
+contribution of engineering, compute, or funding often needs a governance-side
+counterpart to be justifiable inside the contributing organization — and
+because the alternative, selling seats, would destroy what makes the Consortium
+worth supporting (Charter §9.4).
+
+**Membership.** Open to any organization that either contributes substantial
+engineering, compute, infrastructure, or funding to CAMSAI projects, or is
+invited by the Steering Committee for the perspective it brings. Admission is
+by recorded vote (§4.2). Members are listed in [SUPPORTERS.md](SUPPORTERS.md).
+There is no fee, and a diversified organization may participate through more
+than one of its divisions.
+
+**What Council members get:**
+
+- a joint meeting with the Steering Committee at least **twice a year**;
+- the right to **place an item on the Steering Committee's agenda**, which must
+  be taken up and answered on the record rather than merely received;
+- **advance notice** of proposed amendments to the Charter or this document,
+  and of project-intake proposals, before the decision period opens;
+- the right to submit a **written position** on any matter before the Steering
+  Committee, which is recorded alongside the decision;
+- public acknowledgement of their support, on the terms in Charter §9.4.
+
+**What Council members do not get:** a vote, a veto, a seat, a reserved path to
+a seat, priority in any project's roadmap, or any right to direct the technical
+work of a project. Council membership is not a qualification for appointment to
+the Steering Committee and must not be treated as one.
+
+**Antitrust.** The Council is a CAMSAI forum and Charter §7 applies to it in
+full. Its meetings follow a published agenda, and a record is kept.
+
+## 6. Escalation
+
+Technical decisions belong to project maintainers (Charter §6). The Steering
 Committee is not a court of appeal for them. It intervenes only where a project
 is in breach of the Charter or of the intake requirements below, where the
 CAMSAI name or marks are at stake, where a Code of Conduct matter cannot be
 resolved within the project, or where a project has become unmaintained.
 
-## 6. Project intake
+## 7. Project intake
 
 A project may be admitted to CAMSAI when it meets all of the following. Intake
 is by recorded vote (§4.2) on a pull request that records how each requirement
@@ -133,23 +253,23 @@ is met.
    it distributes: third-party components are identified with their licenses,
    redistribution of those components is permitted by them, and nothing is
    included that the project lacks the right to distribute. Contributions are
-   accepted under the
-   [Developer Certificate of Origin](https://developercertificate.org/), by
-   `Signed-off-by` line. CAMSAI does not require a contributor license
-   agreement.
-4. **Named maintainers.** At least one named maintainer, recorded in the
+   accepted under the DCO, by `Signed-off-by` line, on the terms in Charter §5.
+4. **Publishable.** Nothing in the project is classified, controlled, or
+   otherwise unpublishable under Charter §8, and the contributing institutions
+   have completed whatever release review applies to them.
+5. **Named maintainers.** At least one named maintainer, recorded in the
    repository, who is responsible for review and releases. Projects with a
    single maintainer are admitted as **incubating**.
-5. **Continuous integration.** Automated checks run on pull requests, and the
+6. **Continuous integration.** Automated checks run on pull requests, and the
    project's build and test procedure is reproducible by an outside
    contributor.
-6. **Documentation.** A README that states what the project does and how to
+7. **Documentation.** A README that states what the project does and how to
    install and run it, and a CONTRIBUTING file that states how to contribute.
-7. **Code of Conduct.** The project adopts CAMSAI's
+8. **Code of Conduct.** The project adopts CAMSAI's
    [Code of Conduct](CODE_OF_CONDUCT.md) and names an enforcement contact.
-8. **Security contact.** A documented way to report a vulnerability privately.
+9. **Security contact.** A documented way to report a vulnerability privately.
 
-## 7. Project lifecycle
+## 8. Project lifecycle
 
 - **Incubating.** Admitted, and expected to meet the intake requirements, but
   not yet demonstrating a sustainable contributor base or a stable interface.
@@ -162,6 +282,6 @@ is met.
 Status changes are made by recorded vote and reflected in the projects table in
 [README.md](README.md).
 
-## 8. Amendments
+## 9. Amendments
 
-This document is amended by the process in Charter §9.
+This document is amended by the process in Charter §12.

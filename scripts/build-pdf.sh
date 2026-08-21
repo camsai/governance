@@ -16,7 +16,7 @@ IMAGE="pandoc/latex:3.10-ubuntu"
 OUTPUT="CAMSAI-governance-${VERSION}.pdf"
 
 # Order matters: the consolidated document reads as a single instrument.
-DOCUMENTS=(CHARTER.md GOVERNANCE.md STEERING.md TRADEMARKS.md CODE_OF_CONDUCT.md)
+DOCUMENTS=(CHARTER.md GOVERNANCE.md STEERING.md SUPPORTERS.md TRADEMARKS.md CODE_OF_CONDUCT.md)
 
 # A date tag encodes the date it was ratified; anything else is dated today.
 if [[ "$VERSION" =~ ^([0-9]{4})\.([0-9]{1,2})\.([0-9]{1,2})-[0-9]+$ ]]; then
@@ -36,14 +36,15 @@ the Advancement of Materials Science with AI (CAMSAI), as they stood at version
 \`${VERSION}\`.
 
 It contains, in order: the Charter, the Governance rules, the Steering
-Committee roster, the statement on the CAMSAI name and marks, and the Code of
-Conduct.
+Committee roster, the register of supporters and operating costs, the statement
+on the CAMSAI name and marks, and the Code of Conduct.
 
 **CAMSAI is not incorporated.** It has no separate legal personality and cannot
 enter contracts, hold property, employ anyone, or receive funds in its own
 name. These documents describe how the Consortium intends to govern itself and
 record undertakings made in the open; they are not a constitution of a legal
-entity. See Charter section 8.
+entity. See Charter section 11, which also states what happens if no permanent
+home is in place by 31 December 2027.
 
 Governance documents are versioned by date tag in the form \`YYYY.M.D-N\`, where
 the date is the date of ratification and \`N\` distinguishes multiple
