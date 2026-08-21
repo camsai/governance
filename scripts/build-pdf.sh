@@ -25,11 +25,14 @@ REPOSITORY_URL="https://github.com/camsai/governance/blob/main"
 # Order matters: the consolidated document reads as a single instrument.
 DOCUMENTS=(CHARTER.md GOVERNANCE.md STEERING.md SUPPORTERS.md TRADEMARKS.md CODE_OF_CONDUCT.md)
 
-# A date tag encodes the date it was ratified; anything else is dated today.
+# Only a date tag means the documents were ratified, so only a date tag may say
+# so on the title page. Anything else is a draft, dated today and labelled as
+# one — a draft that calls itself ratified would contradict the notice at the
+# head of every document it contains.
 if [[ "$VERSION" =~ ^([0-9]{4})\.([0-9]{1,2})\.([0-9]{1,2})-[0-9]+$ ]]; then
-    RATIFIED="$(printf '%04d-%02d-%02d' "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}")"
+    DATE_LINE="Ratified $(printf '%04d-%02d-%02d' "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}")"
 else
-    RATIFIED="$(date -u +%Y-%m-%d)"
+    DATE_LINE="Draft of $(date -u +%Y-%m-%d). Not ratified."
 fi
 
 FRONTMATTER=".frontmatter.generated.md"
@@ -131,7 +134,7 @@ docker run --rm \
     --metadata title="CAMSAI Governance" \
     --metadata subtitle="Version ${VERSION}" \
     --metadata author="Consortium for the Advancement of Materials Science with AI" \
-    --metadata date="Ratified ${RATIFIED}" \
+    --metadata date="${DATE_LINE}" \
     --variable documentclass=report \
     --variable geometry:margin=1in \
     --variable fontsize=11pt \
