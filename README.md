@@ -103,6 +103,11 @@ that reviewers, counsel, and partner organizations can read and circulate a
 fixed, citable snapshot without cloning the repository. Releases are listed at
 [github.com/camsai/governance/releases](https://github.com/camsai/governance/releases).
 
+While the documents are still under review, a `draft-YYYY-MM-DD` tag publishes
+the same PDF as a **pre-release** instead. A draft carries no version number,
+is marked `draft-…` in the footer of every page, and asserts nothing beyond
+what the documents said on that date. Only a date tag means ratified.
+
 To build the same PDF locally, with Docker installed:
 
 ```bash

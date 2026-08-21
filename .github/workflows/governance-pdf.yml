@@ -14,7 +14,9 @@ name: Governance PDF
 on:
   push:
     branches: [main]
-    tags: ['[0-9][0-9][0-9][0-9].[0-9]*.[0-9]*-[0-9]*']
+    tags:
+      - '[0-9][0-9][0-9][0-9].[0-9]*.[0-9]*-[0-9]*' # a ratified version
+      - 'draft-*'                                   # a reviewable draft
   pull_request:
   workflow_dispatch:
 
@@ -83,11 +85,27 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: |
-          printf '%s\n\n%s\n' \
-            "Consolidated PDF of the CAMSAI governance documents as ratified at version \`$TAG\`: the Charter, the Governance rules, the Steering Committee roster, the register of supporters and operating costs, the statement on the CAMSAI name and marks, and the Code of Conduct." \
-            "CAMSAI is not incorporated and has no separate legal personality; see Charter section 11." \
-            > release-notes.md
-          gh release create "$TAG" \
-            --title "CAMSAI Governance $TAG" \
-            --notes-file release-notes.md \
-            "CAMSAI-governance-$TAG.pdf"
+          # A date tag asserts ratification; a draft-* tag asserts nothing but
+          # "this is what the documents said on that day". They are published
+          # differently so that a reader cannot mistake one for the other.
+          if [ "${TAG#draft-}" != "$TAG" ]; then
+            printf '%s\n\n%s\n\n%s\n' \
+              "Consolidated PDF of the CAMSAI governance documents as they stood on this date. **These documents have not been ratified.**" \
+              "They are the Consortium's declared operating practice, published for review: no Steering Committee has voted on them, and no version tag has been applied. See CHARTER.md section 12.1 for what adoption requires. Every page of the PDF is marked \`$TAG\` rather than a version number." \
+              "Comments are welcome as issues or pull requests against this repository." \
+              > release-notes.md
+            gh release create "$TAG" \
+              --title "CAMSAI Governance — draft of ${TAG#draft-}" \
+              --notes-file release-notes.md \
+              --prerelease \
+              "CAMSAI-governance-$TAG.pdf"
+          else
+            printf '%s\n\n%s\n' \
+              "Consolidated PDF of the CAMSAI governance documents as ratified at version \`$TAG\`: the Charter, the Governance rules, the Steering Committee roster, the register of supporters and operating costs, the statement on the CAMSAI name and marks, and the Code of Conduct." \
+              "CAMSAI is not incorporated and has no separate legal personality; see Charter section 11." \
+              > release-notes.md
+            gh release create "$TAG" \
+              --title "CAMSAI Governance $TAG" \
+              --notes-file release-notes.md \
+              "CAMSAI-governance-$TAG.pdf"
+          fi
