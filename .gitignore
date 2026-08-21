@@ -1,0 +1,4 @@
+# Built release assets and scratch files; the PDF is published as a release.
+CAMSAI-governance-*.pdf
+.frontmatter.generated.md
+release-notes.md

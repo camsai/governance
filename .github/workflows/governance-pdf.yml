@@ -1,0 +1,60 @@
+# Renders the governance documents into one consolidated PDF, so that
+# reviewers, counsel, and partner organizations can read and circulate a fixed,
+# citable snapshot without cloning the repository.
+#
+# Pushing a date tag (YYYY.M.D-N) publishes that PDF as a GitHub Release.
+# Every other run builds the same PDF and leaves it as a build artifact, so a
+# rendering failure surfaces before a version is ratified rather than after.
+name: Governance PDF
+
+on:
+  push:
+    branches: [main]
+    tags: ['[0-9][0-9][0-9][0-9].[0-9]*.[0-9]*-[0-9]*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to create the release on a tag
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Determine version label
+        id: version
+        run: |
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            echo "label=$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
+          else
+            echo "label=draft-${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Render consolidated PDF
+        run: scripts/build-pdf.sh "${{ steps.version.outputs.label }}"
+
+      - name: Keep the PDF as a build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: CAMSAI-governance-${{ steps.version.outputs.label }}
+          path: CAMSAI-governance-*.pdf
+          if-no-files-found: error
+
+      - name: Publish the release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          printf '%s\n\n%s\n' \
+            "Consolidated PDF of the CAMSAI governance documents as ratified at version \`$TAG\`: the Charter, the Governance rules, the Steering Committee roster, the statement on the CAMSAI name and marks, and the Code of Conduct." \
+            "CAMSAI is not incorporated and has no separate legal personality; see Charter section 8." \
+            > release-notes.md
+          gh release create "$TAG" \
+            --title "CAMSAI Governance $TAG" \
+            --notes-file release-notes.md \
+            "CAMSAI-governance-$TAG.pdf"
