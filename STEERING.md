@@ -16,9 +16,17 @@ candidates, answering expressions of interest on the record, and bringing
 appointments to a decision. The role carries **no vote** and ends when a Chair
 is elected (GOVERNANCE.md §3.1).
 
-| Role | Holder | Founding period opened |
-|:-------------|:-----------------|:-------------|
-| Convener | _to be recorded_ | _pending_ |
+| Role | Holder | Affiliation | Founding period opened |
+|:----------|:----------------------------------|:---------|:--------------------|
+| Convener | Timur Bazhirov (@timurbazhirov) | Mat3ra | _opens on adoption_ |
+
+The Convener's affiliation is recorded because Mat3ra is also the interim
+custodian of the CAMSAI marks ([TRADEMARKS.md](TRADEMARKS.md) §2). Holding both
+roles concentrates influence during the founding period, and saying so here is
+the point: the custodian's undertakings bind regardless of who convenes, the
+Convener has no vote by virtue of the role, and the concentration ends as seats
+are filled. The conflict-of-interest duty in GOVERNANCE.md §4.3 applies to the
+Convener in any seat they may separately hold.
 
 ## Chair
 
